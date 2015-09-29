@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+		<!-- User Superviseur-->
+
+		<record id="view_res_Superviseur_form" model="ir.ui.view">
+			<field name="name">Superviseur</field>
+			<field name="model">res.users</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_users_form" />
+			<field name="arch" type="xml">
+				<data>
+				</data>
+			</field>
+		</record>
+		
+
+		<record id="action_res_user_Superviseur" model="ir.actions.act_window">
+			<field name="name">Superviseur</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.users</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="base.view_users_tree" />
+			<field name="search_view_id" ref="base.view_users_search" />
+			<field name="domain">[('role', '=', 'Super')]</field>
+			<field name="context">{'active_test': False}</field>
+			<field name="help"></field>
+		</record>
+        <record id="action_res_user_Superviseur_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="base.view_users_tree"/>
+           	<field name="domain">[('role', '=', 'Super')]</field>
+            <field name="act_window_id" ref="action_res_user_Superviseur"/>
+        </record>
+        <record id="action_res_user_Superviseur_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_res_Superviseur_form"/>
+            <field name="domain">[('role', '=', 'Super')]</field>
+            <field name="act_window_id" ref="action_res_user_Superviseur"/>
+        </record>
+ <menuitem action="action_res_user_Superviseur" id="menu_action_res_user_Superviseur" parent="id_repac_admin_comptes" />
+
+		
+
+		<!--record id="base.action_res_users" model="ir.actions.act_window">
+			<field name="domain">[('role', '=', 'Super')]</field>
+		</record-->
+
+		
+    </data>
+</openerp>

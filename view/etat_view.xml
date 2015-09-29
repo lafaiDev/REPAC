@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--etat-->
+	 <record model="ir.ui.view" id="view_epac_etat_form">
+        <field name="name">Etat</field>
+        <field name="model">epac.etat</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Etat" version="7.0">
+			<sheet>
+                        <group>
+                            <group>
+                <field name="name" select="1"/>
+                <!--field name="contact_id" select="2"/-->
+			</group>
+			</group>
+			</sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_epac_etat_tree">
+        <field name="name">Etat</field>
+        <field name="model">epac.etat</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="etat">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_etat">
+        <field name="name">Etat</field>
+        <field name="res_model">epac.etat</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Etat" id="menu_etat" parent="id_REPAC_admin_nomenclature" action="action_epac_etat"/>
+</data>
+</openerp>

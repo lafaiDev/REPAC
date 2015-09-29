@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!-- prospect-->
+
+    <record model="ir.ui.view" id="view_epac_Prospect_form">
+        <field name="name">Prospect</field>
+        <field name="model">epac.prospect</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Prospect" version="7.0">
+                <sheet>
+                    <!--button name="send_email" type="object" string="envoyer mail" class="oe_link"/-->
+            <group>
+                <group>
+                    <field name="name" select="1"/>
+                    <field name="telephone" select="1"/>
+                    <field name="fax"/>
+                    <field name="boitePostale"/>
+                    <field name="serin"/>
+                    <field name="siret"/>
+                    <field name="effectif"/>
+                    <field name="siteWeb"/>
+                    <button name="fcct" string="Appeler" type="object"/> 
+
+                </group>
+                <group>
+                    <field name="statut" />
+                    <field name="secteur"/>
+                    
+                    <!--field name="email" /-->
+                    <field name="email" widget="email" />
+                    <field name="codePostal"/>
+                    <field name="origine"/>
+                    <field name="commentaire"/>
+                    <field name="type_id"/>
+                    <field name="qualification_id"/>
+                </group>
+            </group>
+            <notebook colspan="4">
+						<page string="Enregestrement Appel">                          
+									   <field name="appel_ids"/>
+									   
+						</page>	
+                        <page string="Contact">
+                                <field name="contact_ids" />                           
+                        </page>
+                        <page string="Service">
+                                <field name="service_ids"/>                           
+                        </page>
+                        <page string="Notes">
+                                <field name="note"/>
+                        </page>
+                        <page string="Operateur">
+                                <field name="operateur_ids" select="1"/>
+                        </page>
+                        <page string="Adress">
+                                 <field name="adresse_id" select="1"/>
+                       </page>
+            </notebook>
+                
+                
+                
+                
+					</sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_Prospect_tree">
+        <field name="name">Prospect</field>
+        <field name="model">epac.prospect</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Prospect">
+					<field name="name" />
+				   <field name="telephone"/>
+                    <field name="fax"/>
+                    <field name="boitePostale"/>
+                    <field name="serin"/>
+                    <field name="siret"/>
+                    <field name="effectif"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_Prospect">
+        <field name="name">Prospect</field>
+        <field name="res_model">epac.prospect</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Prospect" id="menu_Prospect" parent="id_REPAC_others_prospection" action="action_epac_Prospect"/>
+	
+	
+	
+</data>
+</openerp>

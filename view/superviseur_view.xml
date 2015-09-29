@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+ 
+	<!--superviseur-->
+	
+	<record model="ir.ui.view" id="view_epac_superviseur_form">
+        <field name="name">superviseur</field>
+        <field name="model">epac.superviseur</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="superviseur" version="7.0">
+				
+				
+					<h1>
+                            <field name="idsuperviseur" default_focus="1" placeholder="Name" colspan="2"/>
+                    </h1>
+					
+				
+				
+				<notebook colspan="4">
+					
+					<page string="Notes">
+                            <field name="note"/>
+                    </page>
+					
+				</notebook>
+            </form>
+        </field>
+    </record>
+	<record model="ir.ui.view" id="view_epac_superviseur_tree">
+        <field name="name">superviseur</field>
+        <field name="model">epac.superviseur</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="superviseur">
+				
+                            					
+                
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_SuperViseur">
+        <field name="name">SuperViseur</field>
+        <field name="res_model">epac.superviseur</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="SuperViseur" id="menu_SuperViseur" parent="idgestionuser" action="action_SuperViseur"/>
+
+</data>
+</openerp>

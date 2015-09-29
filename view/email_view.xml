@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--email-->
+	     
+    <record model="ir.ui.view" id="view_Email_form">
+        <field name="name">Email</field>
+        <field name="model">epac.email</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Email" version="7.0">
+            
+				<sheet>
+                        <group>
+                            <group>
+                               <field name="objet"/>
+                                <field name="author_id"/>
+                                <field name="destinataires"/>
+                                <field name="date"/>
+                                <field name="type" />
+                                <!--field name="subtype_id"/-->
+                            </group>
+                            <group>
+                                <field name="modele"/>
+                                <field name="res_id"/>
+                                <!--field name="parent_id"/>
+                                <field name="partner_ids" widget="many2many_tags"/>
+                                <field name="notified_partner_ids" widget="many2many_tags"/-->
+                            </group>
+                        </group>
+                        <field name="corps"/>
+                    </sheet>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_Email_tree">
+        <field name="name">Email</field>
+        <field name="model">epac.email</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Email">
+                <field name="objet"/>
+				<field name="author_id"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_Email">
+        <field name="name">Email</field>
+        <field name="res_model">epac.email</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+</data>
+</openerp>

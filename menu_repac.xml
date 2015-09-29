@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<openerp>
+<data>
+
+<!-- ### Espace Administrateur ### -->
+<menuitem name="REPAC" id="id_REPAC_admin" />
+        <menuitem name="Projets" parent="id_REPAC_admin" id="id_REPAC_admin_projets"/>
+        <menuitem name="Equipes" parent="id_REPAC_admin" id="id_REPAC_admin_equipes" />
+        <menuitem name="Nomenclature" parent="id_REPAC_admin" id="id_REPAC_admin_nomenclature" groups="group_repac_admin"/>
+        <menuitem name="Reporting" parent="id_REPAC_admin" id="id_REPAC_admin_reporting"/>
+        <menuitem name="Journale" parent="id_REPAC_admin" id="id_REPAC_admin_journale"/>
+
+<menuitem name="Configuration REPAC" id="id_ConfREPAC_admin" groups="group_repac_admin" />
+<menuitem name="Serveur" parent="id_ConfREPAC_admin" id="id_ConfREPAC_admin_serveur"/>
+        <menuitem name="Thème" parent="id_ConfREPAC_admin" id="id_ConfREPAC_admin_theme"/>
+        <menuitem name="Comptes" parent="id_ConfREPAC_admin" id="id_repac_admin_comptes"/>
+
+<!-- ### Espace Agent, Superviseur, Chef de projet ### -->
+        <menuitem name="Notification" parent="id_REPAC_admin" id="id_REPAC_others_notification" />
+	<menuitem name="E-mail" parent="id_REPAC_admin" id="id_REPAC_others_mail"/>
+	<menuitem name="Prospection" parent="id_REPAC_admin" id="id_REPAC_others_prospection" />
+	<menuitem name="Meeting" parent="id_REPAC_admin" id="id_REPAC_others_meeting" />
+	<menuitem name="Appels" parent="id_REPAC_admin" id="id_REPAC_others_appels"/>
+	<menuitem name="Affectation" parent="id_REPAC_admin" id="id_REPAC_others_affectation" />
+	
+</data>
+</openerp>

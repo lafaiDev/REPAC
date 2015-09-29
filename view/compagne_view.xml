@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--compagne-->
+
+	<record model="ir.ui.view" id="view_epac_compagne_form">
+        <field name="name">compagne</field>
+        <field name="model">epac.compagne</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Contact" version="7.0">
+				<sheet>
+		 <group>
+				<group>
+					<field name="name" colspan="2"/>
+				     <field name="datecreation"/>
+					<field name="responsable_id" select="1"/>
+				</group>
+				<group>
+				   <field name="client_id" select="1"/>
+				   <field name="datefin"/>
+				   <field name="sujet" select="2"/>
+				</group>
+		</group>
+
+        <notebook colspan="4">
+                        
+                        <page string="Equipe">
+                                <field name="equipe_id"/>
+                        </page>
+						<page string="Notes">
+                                <field name="description"/>
+                        </page>
+            </notebook>
+        </sheet>
+          </form>
+        </field>
+    </record>
+	<record model="ir.ui.view" id="view_epac_compagne_tree">
+        <field name="name">compagne</field>
+        <field name="model">epac.compagne</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Chef_Compagne">
+                <field name="name"/>
+				<field name="responsable_id"/>
+                <field name="datecreation"/>
+                <field name="datefin"/>
+            </tree>
+	    </field>
+    </record>
+    <record id="view_compagne_calendar" model="ir.ui.view">
+            <field name="name">calendar Compagne</field>
+            <field name="model">epac.compagne</field>
+            <field name="arch" type="xml">
+                <calendar color="client_id" date_start="datecreation" date_stop="datefin" string="compagne">
+                    <field name="name"/>
+                    <field name="responsable_id"/>
+                </calendar>
+            </field>
+        </record>
+	<record model="ir.actions.act_window" id="action_epac_compagne">
+        <field name="name">compagne</field>
+        <field name="res_model">epac.compagne</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+	 <menuitem name="compagne" id="menu_epac_compagne" parent="id_REPAC_admin_projets" action="action_epac_compagne"/>
+	 
+	 
+</data>
+</openerp>

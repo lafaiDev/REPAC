@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+		<!-- Users -->
+
+		<record id="view_res_agent_form" model="ir.ui.view">
+			<field name="name">agent</field>
+			<field name="model">res.users</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_users_form" />
+			<field name="arch" type="xml">
+				<data>
+					
+					<notebook position="inside" >
+						<page string="Equipe">
+                                <field name="equipe_ids" />
+                                  
+                        </page>
+                        
+						<page string="role">
+								<group>
+                              <field name="role" />
+                            </group>
+						</page>
+                        <page string="Serveur Appele">
+                            <group >
+                                <field name="typecanalasterisk" select="0"/>
+                                <field name="ressource" select="0"/>
+                                <field name="extension" select="0"/>
+                                <field name="asterix_id" select="1"/>
+                            </group>
+                        </page>
+						
+					</notebook>
+				</data>
+			</field>
+		</record>
+		<record id="view_res_agent_tree" model="ir.ui.view">
+			<field name="name">agent</field>
+			<field name="model">res.users</field>
+			<field name="type">tree</field>
+			<field name="inherit_id" ref="base.view_users_tree" />
+			<field name="arch" type="xml">
+				<data>
+				
+				</data>
+			</field>
+		</record>
+
+
+		<record id="action_res_user_agent" model="ir.actions.act_window">
+			<field name="name">Agent</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.users</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="base.view_users_tree" />
+			<field name="search_view_id" ref="base.view_users_search" />
+			<field name="domain">[('role', '=', 'agent')]</field>
+			<field name="context">{'active_test': False}</field>
+			<field name="help"></field>
+		</record>
+        <record id="action_res_user_agent_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+			<field name="domain">[('role', '=', 'agent')]</field>
+            <field name="view_id" ref="base.view_users_tree"/>
+            <field name="act_window_id" ref="action_res_user_agent"/>
+        </record>
+        <record id="action_res_user_agent_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+			<field name="domain">[('role', '=', 'agent')]</field>
+            <field name="view_id" ref="view_res_agent_form"/>
+            <field name="act_window_id" ref="action_res_user_agent"/>
+        </record>	
+		
+
+		<menuitem action="action_res_user_agent" id="menu_action_res_user_agent" parent="id_repac_admin_comptes" />
+	
+		<!--record id="base.action_res_users" model="ir.actions.act_window">
+			<field name="domain">[('user_profile', '=', False)]</field>
+		</record-->
+
+		
+    </data>
+</openerp>

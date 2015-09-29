@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--qualification-->
+	<record model="ir.ui.view" id="view_epac_qualification_form">
+        <field name="name">Qualification</field>
+        <field name="model">epac.qualification</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="qualification" version="7.0">
+			<sheet>
+				<group>
+				<group>
+                <field name="name" select="2"/>
+                <!--field name="prospect_id" select="2"/-->
+				</group>
+				</group>
+				</sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_epac_qualification_tree">
+        <field name="name">Qualification</field>
+        <field name="model">epac.qualification</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="qualification">
+                <field name="name"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_qualification">
+        <field name="name">Qualification</field>
+        <field name="res_model">epac.qualification</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Qualification" id="menu_qualification" parent="id_REPAC_admin_nomenclature" action="action_epac_qualification"/>
+	
+</data>
+</openerp>

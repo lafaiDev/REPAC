@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--Serveur Aseterisk-->
+	
+	<record model="ir.ui.view" id="view_epac_asterix_form">
+        <field name="name">Server Appele</field>
+        <field name="model">epac.asterix</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		  <form string="Server Appeles" version="7.0">
+		  <sheet>
+		        <group>
+					<group>
+						<field name="name"/>
+						<field name="userAMI"/>
+						<field name="port"/>
+						<field name="active"/>
+					</group>
+					<group>
+						<field name="adresseIP"/>
+						<field name="passwdAMI" password = "True"/>
+						<field name="contextdialplan"/>
+					</group>
+			    </group>
+                <notebook colspan="4">
+					    <page string="User">
+                               
+                               <field name="agent_id"/>
+                                
+                        </page>
+						<page string="Notes">
+								<field name="note"/>
+						</page>
+			    </notebook>
+			</sheet>
+           </form>
+        </field>
+    </record>
+	<record model="ir.ui.view" id="view_epac_asterix_tree">
+        <field name="name">Server Appele</field>
+        <field name="model">epac.asterix</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="asterix">
+				        <field name="name"/>
+						<field name="adresseIP"/>
+						<field name="port"/>
+	        </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_asterix">
+        <field name="name">Server Appele</field>
+        <field name="res_model">epac.asterix</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="asterix" id="menu_asterix" parent="id_ConfREPAC_admin_serveur" action="action_asterix"/>
+	
+	
+</data>
+</openerp>

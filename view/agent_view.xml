@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--Agent     -->
+	 
+	  <record model="ir.ui.view" id="view_Agent_form">
+        <field name="name">Agent</field>
+        <field name="model">epac.agent</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Agent" version="7.0">
+				<group>
+					<group>
+						
+						
+					</group>
+				</group>
+                <notebook colspan="4">
+					    <page string="Equipe">
+                                <field name="equipe_ids"/>
+                        </page>
+                        
+						<page string="Notes">
+								<field name="note"/>
+						</page>
+                        <page string="Serveur Appele">
+                            <group>
+                                <field name="typecanalasterisk" select="0"/>
+                                <field name="ressource" select="0"/>
+                                <field name="extension" select="0"/>
+                                <field name="asterix_id" select="1"/>
+                            </group>
+                        </page>
+			</notebook>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_Agent_tree">
+        <field name="name">Agent</field>
+        <field name="model">epac.agent</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Agent">
+                <field name="idagent"/>
+                
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_Agent">
+        <field name="name">Agent</field>
+        <field name="res_model">epac.agent</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Agent" id="menu_Agent" parent="idgestionuser" action="action_Agent"/>
+	
+	
+</data>
+</openerp>

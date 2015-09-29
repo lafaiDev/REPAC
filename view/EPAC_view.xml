@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+	
+    <record model="ir.ui.view" id="view_objet_enreg_form">
+        <field name="name">objet.enreg</field>
+        <field name="model">objet.enreg</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Objetenreg">
+			   <field name="nomfichier" select="0"/>
+			   <field name="fichier" select="0"/>
+			   <!--field name="contact_id" select="0"/-->
+			   <button name="transfert_par_ftp" string="charger les enregistrements" type="object"/>
+			</form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_objet_enreg_tree">
+        <field name="name">objet.enreg</field>
+        <field name="model">objet.enreg</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Objetenreg">
+                <field name="nomfichier" />
+                <field name="fichier"/>				
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_objet_enreg">
+        <field name="name">objet.enreg</field>
+        <field name="res_model">objet.enreg</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--menuitem name="Objetenreg" id="menu_Objetenreg" parent="id_REPAC_admin_reporting" action="action_objet_enreg"/-->
+	
+	<!--rapport-->
+	
+    <record model="ir.ui.view" id="view_my_report_model_tree">
+        <field name="name">report Appel</field>
+        <field name="model">my.report.model</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <!--div>
+                           
+                            <button name="test" type="objet" />
+             </div-->
+            <tree string="Journale Appel">
+                <field name="appele"/>
+                <field name="appelant"/>
+				<field name="fichier"/>
+				<button name="ftpfun" string="charger lenregistrement" type="object" icon="gtk-find" />
+				<field name="nomfichier"/>
+				<field name="datee"/>
+				<field name="nom_contact"/>
+				<field name="nom_prospect"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_my_report_model">
+        <field name="name">report Appel</field>
+        <field name="res_model">my.report.model</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem name="Journale Appel" id="myreport" parent="id_REPAC_others_appels" action="action_my_report_model"/>
+	
+	<!--rapport 2-->
+    <record model="ir.ui.view" id="view_my_report_tree">
+        <field name="name">report Appel</field>
+        <field name="model">epac.report</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="report Appel">
+                <field name="appelant"/>
+                <field name="nombre"/>
+			</tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_my_report_graph">
+        <field name="name">report Appel</field>
+        <field name="model">epac.report</field>
+        <field name="type">graph</field>
+        <field name="arch" type="xml">
+            <graph string="report Appel">
+                <field name="appelant" group="True"/>
+                <field name="nombre" operator="+"/>
+			</graph>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_report">
+        <field name="name">report Appel</field>
+        <field name="res_model">epac.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+   
+    <menuitem name="raport Appel" id="epac_report" parent="id_REPAC_admin_reporting" action="action_epac_report"/>
+	</data>
+</openerp>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!-- operateur-->
+	 <record model="ir.ui.view" id="view_epac_operateur_form">
+		<field name="name">Operateur</field>
+		<field name="model">epac.operateur</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Operateur" version="7.0">
+			<sheet>
+				<group>
+				<group>
+				<field name="name" select="1"/>
+				<!--field name="prospect_ids" select="1"/-->
+				<field name="service_ids" select="1"/>
+
+			  </group>
+			  </group>
+			  </sheet>
+			</form>
+		</field>
+	</record>
+	<record model="ir.ui.view" id="view_epac_operateur_tree">
+		<field name="name">Operateur</field>
+		<field name="model">epac.operateur</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Operateur">
+				<field name="name"/>
+
+			</tree>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="action_epac_operateur">
+		<field name="name">Operateur</field>
+		<field name="res_model">epac.operateur</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem name="Operateur" id="menu_Operateur" parent="id_REPAC_admin_nomenclature" action="action_epac_operateur"/>
+</data>
+</openerp>

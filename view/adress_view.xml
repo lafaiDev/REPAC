@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--adresse-->
+	<record model="ir.ui.view" id="view_epac_adresse_form">
+        <field name="name">adresse</field>
+        <field name="model">epac.adresse</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form string="Adresse" version="7.0">
+            <sheet>
+			 <group>
+                 <group>
+                <field name="name" select="1"/>
+                <field name="avenue" select="1"/>
+                <field name="ville" select="1"/>
+                <field name="pays" select="1"/>
+                <field name="boitePostale" select="1"/>
+                <field name="codePostal" select="1"/>
+                <field name="commentaire" select="1"/>
+			 </group>
+             </group>
+            </sheet>
+		</form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_epac_adresse_tree">
+        <field name="name">adresse</field>
+        <field name="model">epac.adresse</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="adresse">
+				<field name="name"/>
+				<field name="avenue"/>
+				<field name="ville"/>
+				<field name="pays"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_adresse">
+        <field name="name">adresse</field>
+        <field name="res_model">epac.adresse</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--menuitem name="adresse" id="menu_adresse" parent="id_REPAC_admin_nomenclature" groups="group_repac_admin" action="action_epac_adresse"/-->
+</data>
+</openerp>

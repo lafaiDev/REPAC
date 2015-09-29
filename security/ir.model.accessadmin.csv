@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_admin_user,res.users,model_res_users,group_repac_admin,1,1,1,1
+access_admin_appl_report_namber,my.report.model,model_my_report_model,group_repac_admin,1,1,1,1
+access_admin_appl_report,epac.report,model_epac_report,group_repac_admin,1,1,1,1
+access_admin_board,board.create,model_board_create,group_repac_admin,1,1,1,1
+access_admin_compagne,epac.compagne,model_epac_compagne,group_repac_admin,1,1,1,1
+access_admin_client,epac.client,model_epac_client,group_repac_admin,1,1,1,1
+access_admin_meedlog,meed.log,model_meed_log,group_repac_admin,1,1,1,1
+access_admi_asterix,epac.asterix,model_epac_asterix,group_repac_admin,1,1,1,1
+access_admin_etat,epac.etat,model_epac_etat,group_repac_admin,1,1,1,1
+access_admin_meeting,epac.meeting,model_epac_meeting,group_repac_admin,1,1,1,1
+access_admin_operateur,epac.operateur,model_epac_operateur,group_repac_admin,1,1,1,1
+access_admin_qualification,epac.qualification,model_epac_qualification,group_repac_admin,1,1,1,1
+access_admin_service,epac.service,model_epac_service,group_repac_admin,1,1,1,1
+access_admin_type,epac.type,model_epac_type,group_repac_admin,1,1,1,1

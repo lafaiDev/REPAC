@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--chef de compagne-->
+	 <record model="ir.ui.view" id="view_chefcompagne_form">
+        <field name="name">chef Compagne</field>
+        <field name="model">epac.chefcompagne</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="chefcompagne" version="7.0">
+			 
+				
+				
+			<notebook colspan="4">
+					    <page string="Compagne">
+                               
+                               <field name="idcompagne"/>
+                                
+                        </page>
+						
+			</notebook>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_chefcompagne_tree">
+        <field name="name">chef Compagne</field>
+        <field name="model">epac.chefcompagne</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="chef Compagne">
+                
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_chefcompagne">
+        <field name="name">chef Compagne</field>
+        <field name="res_model">epac.chefcompagne</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Chef-Compagne" id="menu_chefcompagne" parent="idgestionuser" action="action_chefcompagne"/>
+     
+</data>
+</openerp>

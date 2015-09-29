@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_chef_board,board.create,model_board_create,group_repac_chefprojet,1,1,1,1
+access_chef_contact,epac.contact,model_epac_contact,group_repac_chefprojet,1,1,1,
+access_chef_equipe,epac.equipe,model_epac_equipe,group_repac_chefprojet,1,1,1,0
+access_chef_prospect,epac.prospect,model_epac_prospect,group_repac_chefprojet,1,1,1,1
+access_chef_appel,epac.appel,model_epac_appel,group_repac_chefprojet,1,1,1,1
+access_chef_trace,epac.trace,model_epac_trace,group_repac_chefprojet,1,1,1,1

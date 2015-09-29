@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--client-->
+	 <record model="ir.ui.view" id="view_epac_client_form">
+        <field name="name">client</field>
+        <field name="model">epac.client</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="client" version="7.0">
+              <group>
+				<group>
+					<field name="name" colspan="1"/>
+					<field name="email" widget="email"/>
+				</group>
+				<group>
+					<field name="phone"/>
+					<field name="mobile"/>
+					<field name="fax"/>
+				</group>
+			</group>	
+				<notebook colspan="4">
+					    <page string="Compagne">
+                               
+                               <field name="compagne_ids"/>
+                                
+                        </page>
+						<page string="Notes">
+								<field name="note"/>
+						</page>
+					</notebook>
+
+            </form>
+        </field>
+    </record>
+	<record model="ir.ui.view" id="view_epac_client_tree">
+        <field name="name">client</field>
+        <field name="model">epac.client</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="client">
+			
+					<field name="name"/>
+					<field name="phone"/>
+					<field name="email"/>
+					<field name="fax"/>
+
+            </tree>
+        </field>
+    </record>
+	<record model="ir.actions.act_window" id="action_epac_client">
+        <field name="name">client</field>
+        <field name="res_model">epac.client</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+     <menuitem name="client" id="menu_epac_client" parent="id_REPAC_admin_projets" action="action_epac_client"/>
+	
+	
+	
+</data>
+</openerp>

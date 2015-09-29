@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="meed_log_form_view" model="ir.ui.view">
+            <field name="name">Journale Server</field>
+            <field name="model">meed.log</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="meed Log">
+                    <field name="log_date"/>
+                    <field name="log_user_name"/>
+                    <field name="model_name"/>
+                    <field name="res_id"/>
+                    <field name="pid"/>
+                    <field name="level"/>
+                    <field name="message"/>
+                </form>
+            </field>
+        </record>
+        
+        
+        <record id="meed_log_tree_view" model="ir.ui.view">
+            <field name="name"> Journale</field>
+            <field name="model">meed.log</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="meed Logs">
+                    <field name="log_date"/>
+                    <field name="pid"/>
+                    <field name="model_name"/>
+                    <field name="res_id"/>
+                    <field name="level"/>
+                    <field name="message"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="meed_log_search_view" model="ir.ui.view">
+            <field name="name"> journale - Search</field>
+            <field name="model">meed.log</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="meed Logs">
+                    <field name="log_date"/>
+                    <field name="pid"/>
+                    <field name="model_name"/>
+                    <field name="level"/>
+                    <field name="message"/>
+                    <newline/>
+                    <group expand="0" string="Extended..." colspan="11" col="11" groups="base.group_extended">
+                        <field name="res_id"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By..." colspan="4" col="4" groups="base.group_extended">
+                        <filter string="Model" icon="terp-stage" domain="[]" context="{'group_by':'model_name'}"/>
+                        <filter string="PID" icon="terp-account" domain="[]" context="{'group_by':'pid'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        
+        <record id="act_meed_log" model="ir.actions.act_window">
+            <field name="name">Journale</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">meed.log</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_meed_log" parent="id_REPAC_admin_journale" name="journale" action="act_meed_log"/>
+        
+        <record id="meed_log_simple_tree_view" model="ir.ui.view">
+            <field name="name"> Journale</field>
+            <field name="model">meed.log</field>
+            <field name="type">tree</field>
+            <field name="priority">50</field>
+            <field name="arch" type="xml">
+                <tree string="meed Logs">
+                    <field name="log_date"/>
+                    <field name="pid"/>
+                    <field name="level"/>
+                    <field name="message"/>
+                </tree>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

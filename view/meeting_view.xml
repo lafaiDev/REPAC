@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--RDV-->
+	<record model="ir.ui.view" id="view_epac_meeting_form">
+        <field name="name">meeting</field>
+        <field name="model">epac.meeting</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Meeting" version="7.0">
+                <sheet>
+            <group>
+                <field name="name" select="2"/>
+                <field name="dateRDV" select="2"/>
+                <field name="description" select="0"/>
+            </group>
+                <notebook colspan="4">
+                        <page string="Justification">
+                                <field name="trace_id" />
+                        </page>
+                </notebook>
+            </sheet>
+            </form>
+        </field>
+
+    </record>
+    <record model="ir.ui.view" id="view_epac_meeting_tree">
+        <field name="name">meeting</field>
+        <field name="model">epac.meeting</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Rendez-vous">
+                <field name="name"/>
+                <field name="dateRDV"/>
+                <field name="description"/>
+
+            </tree>
+        </field>
+    </record>
+    <record id="view_meeting_calendar" model="ir.ui.view">
+            <field name="name">calendar meeting</field>
+            <field name="model">epac.meeting</field>
+            <field name="arch" type="xml">
+                <calendar color="name" date_start="dateRDV" string="Meeting">
+                    <field name="name"/>
+                    
+                </calendar>
+            </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_meeting">
+        <field name="name">meeting</field>
+        <field name="res_model">epac.meeting</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+    <menuitem name="Rendez-vous" id="menu_Rendez-vous" parent="id_REPAC_others_meeting" action="action_epac_meeting"/>
+	
+
+</data>
+</openerp>

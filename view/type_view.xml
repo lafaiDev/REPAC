@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--type-->
+	<record model="ir.ui.view" id="view_epac_type_form">
+        <field name="name">Type</field>
+        <field name="model">epac.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Type" version="7.0">
+			<sheet>
+				<group>
+				<group>
+                <!--field name="prospect_id" select="1"/-->
+                <field name="name" select="2"/>
+				</group>
+				</group>
+				</sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_epac_type_tree">
+        <field name="name">Type</field>
+        <field name="model">epac.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Type">
+                <field name="name"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_type">
+        <field name="name">Type</field>
+        <field name="res_model">epac.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Type" id="menu_Type" parent="id_REPAC_admin_nomenclature" action="action_epac_type"/>
+</data>
+</openerp>

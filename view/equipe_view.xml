@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+		<!--equipe-->
+    <record model="ir.ui.view" id="view_epac_equipe_form">
+        <field name="name">equipe</field>
+        <field name="model">epac.equipe</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="equipe" version="7.0">
+                <sheet>
+                <group>
+                        <group>
+                            <field name="name" colspan="2"/> 
+                            <field name="datecree" />
+                        </group>
+
+                        <group>
+                            <field name="superviseur_id"/>                      
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        
+                        <page string="Agent">
+                                    <field name="agent_ids"/> 
+                        </page>
+                        <page string="Compagne">
+                                    <field name="compagne_id"/>
+                        </page>
+                        <page string="Notes">
+                                <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_epac_equipe_tree">
+        <field name="name">equipe</field>
+        <field name="model">epac.equipe</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="equipe">
+                <field name="name"/>
+                <field name="datecree"/>
+				<field name="active"/>
+				<field name="superviseur_id"/>       
+            </tree>
+        </field>
+    </record>
+
+    <!--record model="ir.ui.view" id="view_epac_prospect_search">
+        <field name="name">prospect</field>
+        <field name="res_model">epac.prospect</field>
+        <field name="arch" type="xml">
+            <search string="prospect search">
+                    <field name="nom" />
+                    <filter name="filter_see_all" string="All" domain="['|']" />
+                            
+            </search>
+        </field>
+    </record-->
+    
+    <record model="ir.actions.act_window" id="action_epac_equipe">
+        <field name="name">Equipe</field>
+        <field name="res_model">epac.equipe</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="equipe" id="menu_epac_equipe_a" parent="id_REPAC_admin_equipes" action="action_epac_equipe"/>
+
+</data>
+</openerp>

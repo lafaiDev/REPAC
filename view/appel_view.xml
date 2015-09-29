@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<!--appel-->
+	 <record model="ir.ui.view" id="view_epac_appel_form">
+        <field name="name">Appel planifier</field>
+        <field name="model">epac.appel</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Appel">
+                
+                <field name="appelant" select="2"/>
+                <field name="date_rappel" select="2"/>
+				<field name="description" select="1"/>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_epac_appel_tree">
+        <field name="name">Appel planifier</field>
+        <field name="model">epac.appel</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Appel planifier">
+                <field name="appelant"/>
+                <field name="appele"/>
+                                
+            </tree>
+        </field>
+    </record>
+	<record id="view_appel_calendar" model="ir.ui.view">
+            <field name="name">Appel planifier</field>
+            <field name="model">epac.appel</field>
+            <field name="arch" type="xml">
+                <calendar color="appelant" date_start="date_rappel" string="Rappele">
+                    <field name="appelant"/>
+                    
+                </calendar>
+            </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_epac_appel">
+        <field name="name">Appel planifier</field>
+        <field name="res_model">epac.appel</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+    <menuitem name="Appel planifier" id="menu_Appel" parent="id_REPAC_others_appels" action="action_epac_appel"/>
+
+</data>
+</openerp>

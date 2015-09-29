@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_super_prospect,epac.prospect,model_epac_prospect,group_repac_superviseur,1,1,1,1
+access_super_appel,epac.appel,model_epac_appel,group_repac_superviseur,1,1,1,1
+access_super_contact,epac.contact,model_epac_contact,group_repac_superviseur,1,1,1,1
+access_super_equipe,epac.equipe,model_epac_equipe,group_repac_superviseur,1,0,1,0

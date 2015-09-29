@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_agent_prospect,epac.prospect,model_epac_prospect,group_repac_agent,1,1,1,0
+access_agent_appel,epac.appel,model_epac_appel,group_repac_agent,1,1,1,0
+access_agent_contact,epac.contact,model_epac_contact,group_repac_agent,1,1,1,0
